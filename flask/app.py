@@ -1009,7 +1009,7 @@ class Flask(_PackageBoundObject):
             'provide_automatic_options', None)
 
         if provide_automatic_options is None:
-            if 'OPTIONS' not in methods:
+            if 'options' not in [m.lower() for m in methods]:
                 provide_automatic_options = True
                 required_methods.add('OPTIONS')
             else:
